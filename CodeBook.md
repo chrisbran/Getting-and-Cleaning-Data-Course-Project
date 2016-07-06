@@ -45,35 +45,25 @@ For each record in the dataset it is provided:
 
 - First, the data set is downloaded and unziped 
 - Merging the training and the test sets to create one data set consists of the following steps:
-      
     -  Reading in the train and test data
     -  Assigning column names to the train and test data
     -  Creating the training data set by combining `yTrain`, `subjectTrain`, and `xTrain`
     -  Creating the test data set by combining the `xTest`, `yTest` and `subjectTest` data
     -  Creating one united data set by combining the training and test data sets
     -  Creating a vector for the column names from the `unitedData`, which will be used to select the wanted `mean()` & `stddev()` columns
-    
 - Extracting only the measurements on the mean and standard deviation for each measurement consists of the following parts:
-
      - Creating a `logicalVector` that contains `TRUE` values for the `ID`, `mean()` & `stddev()` columns and `FALSE` for others
      - Subseting the `unitedData` table based on the `logicalVector` to keep only wanted columns
-     
 - Using descriptive activity names to name the activities in the data set included following steps:
-
      - Merging the `unitedData` set with the `acitivityType` table to include descriptive activity names
      - Updating the `colNames` vector to include the new column names after merge
-
 - Appropriately labelling the data set with descriptive activity names required:
-
       - Cleaning up the variable names
       - Reassigning the new descriptive column names to the `unitedData` set
-      
 - From the data set in step 4, creating a second, independent tidy data set with the average of each variable for each activity and each subject required:
-
       - Creating a new table, `unitedDataNoActivityType` without the `activityType` column
       - Summarizing the `unitedDataNoActivityType` table to include just the mean of each variable for each activity and each subject
       - Merging the `tidyData` with `activityLabels` to include descriptive acitvity names
-
 - Finally, the `tidyData` set is exported 
  
 ### Variable information
